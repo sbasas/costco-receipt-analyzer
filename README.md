@@ -1,14 +1,76 @@
-# Welcome to your CDK TypeScript project
+# Costco Receipt Analyzer
 
-This is a blank project for CDK development with TypeScript.
+A serverless application that analyzes Costco receipts to track prices and item history using AWS services.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Architecture
 
-## Useful commands
+- AWS CDK for infrastructure
+- Amazon S3 for receipt storage
+- AWS Lambda for receipt processing
+- Amazon Textract for text extraction
+- Amazon Timestream for price history
+- Amazon Cognito for authentication
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+## Prerequisites
+
+- Node.js (v18.x or later)
+- AWS CLI configured
+- AWS CDK CLI installed
+- TypeScript
+
+## Setup
+
+1. Clone the repository:
+```bash
+git clone [your-repo-url]
+cd costco-receipt-analyzer
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Bootstrap CDK (first time only):
+```bash
+cdk bootstrap
+```
+
+4. Deploy the stack:
+```bash
+cdk deploy
+```
+
+## Project Structure
+
+```
+costco-receipt-analyzer/
+├── bin/                          # CDK app entry point
+├── lib/                          # CDK stack definition
+├── lambda/                       # Lambda functions
+│   └── receipt-processor/        # Receipt processing function
+│       ├── src/                 # TypeScript source code
+│       ├── dist/                # Compiled JavaScript
+│       └── package.json         # Dependencies
+├── docs/                         # Documentation
+├── test/                         # Test files
+├── cdk.json                      # CDK configuration
+├── package.json                  # Project dependencies
+└── tsconfig.json                # TypeScript configuration
+```
+
+## Documentation
+
+For detailed documentation, see the [docs](./docs) directory.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+[Your chosen license]
